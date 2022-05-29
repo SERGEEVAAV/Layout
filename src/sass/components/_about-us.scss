@@ -1,0 +1,70 @@
+$image-gap: 32px;
+
+.about-us {
+    padding: 36px 0px 100px 0px
+}
+
+.employee {
+    display: flex;
+    padding: 35px;
+    position: relative;
+    width: calc(30% - $image-gap);
+    @include media-mobile {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+.employee__container {
+    padding-right: $image-gap;
+    @include media-mobile {
+        flex-direction: column;
+        
+    }
+}
+
+.employee__photo {
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: -52px;
+    // box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
+}
+.employee__contact {
+    @include font($size: 1.4rem, $weight: normal);
+    color: $color-link;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.employee__name {
+    margin: 0;
+
+}
+
+.employee__title {
+    margin: 0;
+    @include font($size: 1.4rem, $weight: normal);
+    
+}
+
+.about-us__title {
+    @include media-tablet {
+        text-align: center;
+    }
+    @include media-mobile {
+        text-align: center;
+    }
+}
+.about-us__description {
+    margin: 0 0 45px; 
+    @extend %font-prim;
+    @include font($size: 1.6rem, $height: 2.6rem, $weight: 400);
+    color: $color-text;
+    @include media-tablet {
+        text-align: center;
+    }
+    @include media-mobile {
+        text-align: center;
+    }
+}

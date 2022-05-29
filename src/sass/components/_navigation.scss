@@ -1,0 +1,110 @@
+.navigation {
+    display: flex;
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+    @include media-tablet {
+        display: block;
+        margin: 0;
+        text-align: center;
+        padding: 0;
+    }
+    @include media-mobile {
+        padding: 0;
+        
+    }
+   
+}
+
+.navigation__link {
+    list-style: none;
+    padding: 0 10px;
+    cursor: pointer;
+    @extend %transition;
+    &:hover {
+        color: $color-primary;
+    }
+    @include media-tablet {
+        margin-bottom: 34px;
+        // @extend %font-prim;
+        @include font($size: 2.2rem, $height: 2.8rem, $weight: 400);
+    }
+}
+
+.header__navigation {
+    @include media-tablet {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%; 
+        background: $color-light;
+        margin-top: 78px;
+        padding: 36px 0;
+        transition: all 0.3s ease 0s;
+        transform: translate(-100%, 0);
+        z-index: 1;
+        
+    }  
+    @include media-mobile {
+        // display: block;
+        width: 100%;
+        margin-top: 58px;
+        text-align: center;
+        
+    }    
+    
+}
+
+.header__navigation._active {
+    @include media-tablet {
+        transform: translate(0, 0);
+    }
+   
+    
+}
+
+#sandwichmenu._active{
+    top: 0;
+    transform: rotate(90deg);
+} 
+
+.btn-nav__bordered {
+    display: none;
+    @include media-mobile {
+       display: inline-block;
+       margin-right: 30px;
+       padding: 11px 25px 13px;
+       @include font($size: 1.6rem, $height: 2.2rem, $weight: 600);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+        background: $color-light;
+        border: 1px solid $color-border;
+        color: $color-text;
+
+        &:hover {
+            background: $color-hovered;
+            border-color: $color-hovered;
+        }
+    }
+}
+
+.btn-nav__colored {
+    display: none;
+    @include media-mobile {
+        display: inline-block;
+        margin-right: 0px;
+        padding: 11px 25px 13px;
+        @include font($size: 1.6rem, $height: 2.2rem, $weight: 600);
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s;
+        background: $color-primary;
+        color: $color-light;
+        border: 1px solid $color-light;
+
+    &:hover {
+        background: $color-additional;
+        border-color: $color-background;
+    }
+    }
+}
